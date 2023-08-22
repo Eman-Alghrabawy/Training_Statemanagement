@@ -1,6 +1,17 @@
-part of 'radio_cubit.dart';
+import 'package:meta/meta.dart';
 
 @immutable
-sealed class RadioState {}
+class RadioItem {
+  final bool isSelected;
 
-final class RadioInitial extends RadioState {}
+  RadioItem({required this.isSelected});
+}
+
+@immutable
+abstract class RadioState {}
+
+class RadioItemsState extends RadioState {
+  final List<RadioItem> radioItems;
+
+  RadioItemsState(this.radioItems);
+}
