@@ -3,6 +3,7 @@ import 'package:training/cubits/cubitreplacement/cubit/replacement_cubit.dart';
 import 'package:training/screens/usingcubit/replacement_usingcubit.dart';
 import 'package:training/screens/usingsetstate/filterbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:training/screens/usingsetstate/replacement_usingsetstate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: replacement(),
+        home: ReplacementPage(),
       ),
     );
   }
