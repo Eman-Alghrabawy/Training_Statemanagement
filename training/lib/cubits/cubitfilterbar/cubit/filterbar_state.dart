@@ -1,6 +1,18 @@
-part of 'filterbar_cubit.dart';
+import 'package:meta/meta.dart';
 
 @immutable
-sealed class FilterbarState {}
+abstract class FilterbarState {}
 
-final class FilterbarInitial extends FilterbarState {}
+class FilterbarInitial extends FilterbarState {}
+
+class FilterSelected extends FilterbarState {
+  final String selectedFilter;
+
+  FilterSelected(this.selectedFilter);
+}
+
+class PasswordVisibilityChanged extends FilterbarState {
+  final bool isPasswordVisible;
+
+  PasswordVisibilityChanged(this.isPasswordVisible);
+}

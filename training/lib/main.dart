@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:training/cubits/cubitfilterbar/cubit/filterbar_cubit.dart';
 import 'package:training/cubits/cubitreplacement/cubit/replacement_cubit.dart';
+import 'package:training/cubits/radiocubit/cubit/radio_cubit.dart';
 import 'package:training/screens/usingcubit/replacement_usingcubit.dart';
 import 'package:training/screens/usingsetstate/filterbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +21,12 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<ReplacementCubit>(
           create: (BuildContext context) => ReplacementCubit(),
+        ),
+        BlocProvider<FilterbarCubit>(
+          create: (BuildContext context) => FilterbarCubit(),
+        ),
+        BlocProvider<RadioCubit>(
+          create: (BuildContext context) => RadioCubit(),
         ),
       ],
       child: MaterialApp(
@@ -42,7 +50,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: ReplacementPage(),
+        home: FilterBar(),
       ),
     );
   }
